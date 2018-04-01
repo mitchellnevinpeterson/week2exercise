@@ -20,6 +20,7 @@ h1 {
 }
 
 nav {
+	z-index: 9999;
 	background-color: rgba(0, 102, 204, 0.90);
 	text-align: center;
 	position: fixed;
@@ -48,10 +49,11 @@ section {
 	padding-top: 75px;
 }
 
-div img {
+img {
+	max-width: 280px;
 	object-fit: cover;
 	height: 300px;
-	width: 400px;
+	width: 100%;
 }
 
 p, h2, h1 {
@@ -60,9 +62,9 @@ p, h2, h1 {
 }
 
 .box {
-	float: left;
-	width: 33.3333333333%;
-	position: center;
+	display: inline-block;
+	width: 30%;
+	vertical-align: top;
 }
 
 p {
@@ -73,6 +75,10 @@ p {
 	line-height: 28px;
 	font-size: 20px;
 }
+p::first-letter {
+	font-size: 30px;
+	font-weight: bold;
+}
 h2 {
 	margin-top: 12px;
 }
@@ -81,15 +87,18 @@ h1 {
 	margin-bottom: 12px;
 	font-family: "Montserrat Subrayada";
 	font-size: 45px;
+	padding: 0 3px;
 }
 
 footer {
-	padding: 3px;
+	padding: 6px;
 	display: inline-block;
 	background-color: rgba(0, 0, 0, 0.5);
 	border: 2px solid #06c;
 	border-radius: 100%;
 	text-align: center;
+	width: 90%;
+	margin: 0 5%;
 }
 
 footer li {
@@ -104,7 +113,25 @@ footer ul {
 	display: inline-block;
 }
 
-.other-sources {
-	margin: 40px auto;
-	width: 100%;
+/*Media Queries*/
+@media(max-width: 857px) {
+	.box {
+		width: 50%;
+		margin: 0 25%;
+		display: block;
+	}
+}
+@media(max-width: 570px) {
+	.box {
+		width: 80%;
+		margin: 0 10%;
+	}
+}
+@media(max-width: 432px) {
+	a {
+		font-size: 14px;
+	}
+	li {
+		margin: 7px;
+	}
 }
